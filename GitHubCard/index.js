@@ -61,54 +61,13 @@ const followersArray = [];
 */
 const container = document.querySelector('.cards');
 
-function lambda(imageUrl, h1Name, h3Login, pLocation, pProfile, pFollowers, pFollowing, pBio) {
+function lambda(objt) {
+    // Card creation
     const card = document.createElement('div');
     card.classList.add('lambda-card');
 
     // Image creation
-    const imag = document.createElement('img');
-    imag.classList.add('lambda-img');
-    imag.src = imageUrl;
-    card.appendChild(imag);
-
-    // Title name of lambda affiliate
-    const name = document.createElement('h1');
-    name.classList.add('lambda-name');
-    name.textContent = h1Name;
-    card.appendChild(name);
-
-    // Login name
-    const login = document.createElement('h3');
-    login.classList.add('lambda-login');
-    login.textContent = h3Login;
-    card.appendChild(login);
-
-    // Location
-    const location = document.createElement('p');
-    location.classList.add('lambda-location');
-    location.textContent = pLocation;
-    card.appendChild(location);
-
-    // Profile
-    const profile = document.createElement('p');
-    profile.classList.add('lambda-profile');
-    profile.textContent = pProfile;
-    card.appendChild(profile);
-
-    // Followers
-    const followers = document.createElement('p');
-    followers.classList.add('lambda-followers');
-    followers.textContent = pFollowers;
-    card.appendChild(followers);
-
-    // Following
-    const following = document.createElement('p');
-    following.classList.add('lambda-following');
-    following.textContent = pFollowing;
-    card.appendChild(following);
-
-    // Bio
-    const bio = document.createElement('p');
-    bio.classList.add('lambda-bio');
-    bio.textContent = pBio;
+    const image = document.createElement('img');
+    image.src = {objt};
+    card.appendChild(image);
 }
