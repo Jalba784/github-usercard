@@ -101,7 +101,14 @@ function lambda(imageUrl, h1Name, h3Login, pLocation, pProfile, pFollowers, pFol
     followers.textContent = pFollowers;
     card.appendChild(followers);
 
-    //
-    const following = ;
-    const bio = ;
+    // Following
+    const following = document.createElement('p');
+    following.classList.add('lambda-following');
+    following.textContent = pFollowing;
+    card.appendChild(following);
+
+    // Bio
+    const bio = document.createElement('p');
+    bio.classList.add('lambda-bio');
+    bio.textContent = pBio;
 }
