@@ -103,5 +103,20 @@ function lambda(objt) {
     anchor.href = {objt};
     profile.appendChild(anchor);
 
-    //
+    // Followers - p
+    const followers = document.createElement('p');
+    followers.textContent = `Followers: ${objt}`;
+    cardInfo.appendChild(followers);
+
+    // Following - p
+    const following = document.createElement('p');
+    following.textContent = `Following: ${objt}`;
+    cardInfo.appendChild(following);
+
+    // Bio - p
+    const bio = document.createElement('p');
+    bio.textContent = `Bio: ${objt}`;
+    cardInfo.appendChild(bio);
+
+
 }
