@@ -92,4 +92,16 @@ function lambda(objt) {
     const location = document.createElement('p');
     location.textContent = `Location: ${objt}`;
     cardInfo.appendChild(location);
+
+    // Profile - p
+    const profile = document.createElement('p');
+    profile.textContent = `Profile:`;
+    cardInfo.appendChild(profile);
+
+    // Href anchor - a
+    const anchor = document.createElement('a');
+    anchor.href = {objt};
+    profile.appendChild(anchor);
+
+    //
 }
