@@ -70,4 +70,15 @@ function lambda(objt) {
     const image = document.createElement('img');
     image.src = {objt};
     card.appendChild(image);
+
+    // Card-info div
+    const cardInfo = document.createElement('div');
+    cardInfo.classList.add('card-info');
+    card.appendChild(cardInfo);
+
+    // User Name h3
+    const name = document.createElement('h3');
+    name.classList.add('name');
+    name.textContent = {objt};
+    cardInfo.appendChild(name);
 }
