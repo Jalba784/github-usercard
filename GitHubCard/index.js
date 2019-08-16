@@ -65,28 +65,37 @@ function Lambda(objt) {
     // Return card
     return card;
 }
+const followersArray = ['Jalba784', 'tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell', 'nickdurbin', 'spettigrew', 'krboelter', 'clifhodges13', 'dlittle-525', 'ron-hughes', 'RobertRamosJr', 'Smv5047', 'Sherexmykes', 'scottmm374', 'rupol', 'stephentanksley', 'bobbidigi', 'nezlobnaya', 'raythurman2386', 'adamcpenman', 'LeonChisum', 'NickGallucci', 'LoralieFlint', 'dannyotown', 'adinkins2019', 'miklo88'];
 
+const friends = followersArray.map((friend) => {
+    axios.get(`https://api.github.com/users/${friend}`)
+        .then((item) => {
+            const eachPerson = item.data;
+            const lambdaCard = Lambda(eachPerson);
+            container.appendChild(lambdaCard)
+        })
+        .catch(() => {
+            console.log('error.....')
+        });
+});
 
-
-axios.get('https://api.github.com/users/Jalba784')
-    .then((item) => {
-        console.log(item.data);
-        const eachPerson = item.data;
-        console.log(Lambda(eachPerson));
-        const lambdaCard = Lambda(eachPerson);
-        container.appendChild(lambdaCard)
-
-
-        // // Create components for each image returned
-        // eachPerson.forEach((person) => {
-        //     container.appendChild(lambdaCard)
-        // })
-
-
-    })
-    .catch(() => {
-        console.log('error.....')
-    });
+// axios.get('https://api.github.com/users/Jalba784')
+//     .then((item) => {
+//         console.log(item.data);
+//         const eachPerson = item.data;
+//         console.log(Lambda(eachPerson));
+//         const lambdaCard = Lambda(eachPerson);
+//         container.appendChild(lambdaCard)
+//
+//
+//         // // Create components for each image returned
+//         // eachPerson.forEach((person) => {
+//         //     container.appendChild(lambdaCard)
+//         // })
+//     })
+//     .catch(() => {
+//         console.log('error.....')
+//     });
 
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
@@ -110,7 +119,7 @@ axios.get('https://api.github.com/users/Jalba784')
           user, and adding that card to the DOM.
 */
 
-const followersArray = ['tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell', 'nickdurbin', 'spettigrew', 'krboelter', 'clifhodges13', 'dlittle-525', 'ron-hughes', 'RobertRamosJr', 'Smv5047', 'Sherexmykes', 'scottmm374', 'rupol', 'stephentanksley', 'bobbidigi', 'nezlobnaya', 'raythurman2386', 'adamcpenman', 'LeonChisum', 'NickGallucci', 'LoralieFlint', 'dannyotown', 'adinkins2019', 'miklo88'];
+// const followersArray = ['tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell', 'nickdurbin', 'spettigrew', 'krboelter', 'clifhodges13', 'dlittle-525', 'ron-hughes', 'RobertRamosJr', 'Smv5047', 'Sherexmykes', 'scottmm374', 'rupol', 'stephentanksley', 'bobbidigi', 'nezlobnaya', 'raythurman2386', 'adamcpenman', 'LeonChisum', 'NickGallucci', 'LoralieFlint', 'dannyotown', 'adinkins2019', 'miklo88'];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return
