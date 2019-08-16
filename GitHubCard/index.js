@@ -61,7 +61,7 @@ const followersArray = [];
 */
 const container = document.querySelector('.cards');
 
-function lambda(imageUrl, h1Name) {
+function lambda(imageUrl, h1Name, h3Login, pLocation, pProfile, pFollowers, pFollowing, pBio) {
     const card = document.createElement('div');
     card.classList.add('lambda-card');
 
@@ -77,8 +77,19 @@ function lambda(imageUrl, h1Name) {
     name.textContent = h1Name;
     card.appendChild(name);
 
-    const login = ;
-    const location = ;
+    // Login name
+    const login = document.createElement('h3');
+    login.classList.add('lambda-login');
+    login.textContent = h3Login;
+    card.appendChild(login);
+
+    // Location
+    const location = document.createElement('p');
+    location.classList.add('lambda-location');
+    location.textContent = pLocation;
+    card.appendChild(location);
+
+
     const profile = ;
     const followers = ;
     const following = ;
