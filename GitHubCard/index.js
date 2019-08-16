@@ -110,7 +110,7 @@ axios.get('https://api.github.com/users/Jalba784')
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = ['tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell', 'nickdurbin', 'spettigrew', 'krboelter', 'clifhodges13', 'dlittle-525', 'ron-hughes', 'RobertRamosJr', 'Smv5047', 'Sherexmykes', 'scottmm374', 'rupol', 'stephentanksley', 'bobbidigi', 'nezlobnaya', 'raythurman2386', 'adamcpenman', 'LeonChisum', 'NickGallucci', 'LoralieFlint', 'dannyotown', 'adinkins2019', 'miklo88'];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return
