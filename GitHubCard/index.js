@@ -76,9 +76,20 @@ function lambda(objt) {
     cardInfo.classList.add('card-info');
     card.appendChild(cardInfo);
 
-    // User Name h3
+    // User Name - h3
     const name = document.createElement('h3');
     name.classList.add('name');
     name.textContent = {objt};
     cardInfo.appendChild(name);
+
+    // Login name - p
+    const userName = document.createElement('p');
+    userName.classList.add('username');
+    userName.textContent = {objt};
+    cardInfo.appendChild(userName);
+
+    // Location - p
+    const location = document.createElement('p');
+    location.textContent = `Location: ${objt}`;
+    cardInfo.appendChild(location);
 }
