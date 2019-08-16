@@ -2,7 +2,11 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
-axios.get('https://api.github.com/users/Jalba784');
+axios.get('https://api.github.com/users/Jalba784')
+    .then((item) => {
+        console.log(item.data)
+    });
+
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -28,7 +32,8 @@ axios.get('https://api.github.com/users/Jalba784');
 const followersArray = [];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
-          Using DOM methods and properties, create a component that will return the following DOM element:
+          Using DOM methods and properties, create a component that will return
+          the following DOM element:
 
 <div class="card">
   <img src={image url of user} />
@@ -54,3 +59,28 @@ const followersArray = [];
   luishrd
   bigknell
 */
+const container = document.querySelector('.cards');
+
+function lambda(imageUrl, h1Name) {
+    const card = document.createElement('div');
+    card.classList.add('lambda-card');
+
+    // Image creation
+    const imag = document.createElement('img');
+    imag.classList.add('lambda-img');
+    imag.src = imageUrl;
+    card.appendChild(imag);
+
+    // Title name of lambda affiliate
+    const name = document.createElement('h1');
+    name.classList.add('lambda-name');
+    name.textContent = h1Name;
+    card.appendChild(name);
+
+    const login = ;
+    const location = ;
+    const profile = ;
+    const followers = ;
+    const following = ;
+    const bio = ;
+}
