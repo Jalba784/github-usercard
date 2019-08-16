@@ -89,9 +89,19 @@ function lambda(imageUrl, h1Name, h3Login, pLocation, pProfile, pFollowers, pFol
     location.textContent = pLocation;
     card.appendChild(location);
 
+    // Profile
+    const profile = document.createElement('p');
+    profile.classList.add('lambda-profile');
+    profile.textContent = pProfile;
+    card.appendChild(profile);
 
-    const profile = ;
-    const followers = ;
+    // Followers
+    const followers = document.createElement('p');
+    followers.classList.add('lambda-followers');
+    followers.textContent = pFollowers;
+    card.appendChild(followers);
+
+    //
     const following = ;
     const bio = ;
 }
