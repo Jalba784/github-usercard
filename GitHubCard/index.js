@@ -2,9 +2,90 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
+const container = document.querySelector('.cards');
+
+function Lambda(objt) {
+    // Card creation
+    const card = document.createElement('div');
+    card.classList.add('lambda-card');
+
+    // Image creation
+    const img = document.createElement('img');
+    img.src = objt['avatar_url'];
+    card.appendChild(img);
+
+    // Card-info div
+    const cardInfo = document.createElement('div');
+    cardInfo.classList.add('card-info');
+    card.appendChild(cardInfo);
+
+    // User Name - h3
+    const name = document.createElement('h3');
+    name.classList.add('name');
+    name.textContent = objt.name || 'See Username';
+    cardInfo.appendChild(name);
+
+    // Login name - p
+    const userName = document.createElement('p');
+    userName.classList.add('username');
+    userName.textContent = objt.login;
+    cardInfo.appendChild(userName);
+
+    // Location - p
+    const location = document.createElement('p');
+    location.textContent = `Location: ${objt.location || "No Location Provided"}`;
+    cardInfo.appendChild(location);
+
+    // Profile - p
+    const profile = document.createElement('p');
+    profile.textContent = `Profile:`;
+    cardInfo.appendChild(profile);
+
+    // Href anchor - a
+    const anchor = document.createElement('a');
+    anchor.href = objt['html_url'];
+    anchor.textContent = objt['html_url'];
+    profile.appendChild(anchor);
+
+    // Followers - p
+    const followers = document.createElement('p');
+    followers.textContent = `Followers: ${objt['followers']}`;
+    cardInfo.appendChild(followers);
+
+    // Following - p
+    const following = document.createElement('p');
+    following.textContent = `Following: ${objt['following']}`;
+    cardInfo.appendChild(following);
+
+    // Bio - p
+    const bio = document.createElement('p');
+    bio.textContent = `Bio: ${objt['bio'] || "No Bio Provided"}`;
+    cardInfo.appendChild(bio);
+
+    // Return card
+    return card;
+}
+
+
+
 axios.get('https://api.github.com/users/Jalba784')
     .then((item) => {
-        console.log(item.data)
+        console.log(item.data);
+        const eachPerson = item.data;
+        console.log(Lambda(eachPerson));
+        const lambdaCard = Lambda(eachPerson);
+        container.appendChild(lambdaCard)
+
+
+        // // Create components for each image returned
+        // eachPerson.forEach((person) => {
+        //     container.appendChild(lambdaCard)
+        // })
+
+
+    })
+    .catch(() => {
+        console.log('error.....')
     });
 
 
@@ -59,64 +140,65 @@ const followersArray = [];
   luishrd
   bigknell
 */
-const container = document.querySelector('.cards');
-
-function lambda(objt) {
-    // Card creation
-    const card = document.createElement('div');
-    card.classList.add('lambda-card');
-
-    // Image creation
-    const image = document.createElement('img');
-    image.src = {objt};
-    card.appendChild(image);
-
-    // Card-info div
-    const cardInfo = document.createElement('div');
-    cardInfo.classList.add('card-info');
-    card.appendChild(cardInfo);
-
-    // User Name - h3
-    const name = document.createElement('h3');
-    name.classList.add('name');
-    name.textContent = {objt};
-    cardInfo.appendChild(name);
-
-    // Login name - p
-    const userName = document.createElement('p');
-    userName.classList.add('username');
-    userName.textContent = {objt};
-    cardInfo.appendChild(userName);
-
-    // Location - p
-    const location = document.createElement('p');
-    location.textContent = `Location: ${objt}`;
-    cardInfo.appendChild(location);
-
-    // Profile - p
-    const profile = document.createElement('p');
-    profile.textContent = `Profile:`;
-    cardInfo.appendChild(profile);
-
-    // Href anchor - a
-    const anchor = document.createElement('a');
-    anchor.href = {objt};
-    profile.appendChild(anchor);
-
-    // Followers - p
-    const followers = document.createElement('p');
-    followers.textContent = `Followers: ${objt}`;
-    cardInfo.appendChild(followers);
-
-    // Following - p
-    const following = document.createElement('p');
-    following.textContent = `Following: ${objt}`;
-    cardInfo.appendChild(following);
-
-    // Bio - p
-    const bio = document.createElement('p');
-    bio.textContent = `Bio: ${objt}`;
-    cardInfo.appendChild(bio);
-
-
-}
+// const container = document.querySelector('.cards');
+//
+// function Lambda(objt) {
+//     // Card creation
+//     const card = document.createElement('div');
+//     card.classList.add('lambda-card');
+//
+//     // Image creation
+//     const image = document.createElement('img');
+//     image.src = {objt};
+//     card.appendChild(image);
+//
+//     // Card-info div
+//     const cardInfo = document.createElement('div');
+//     cardInfo.classList.add('card-info');
+//     card.appendChild(cardInfo);
+//
+//     // User Name - h3
+//     const name = document.createElement('h3');
+//     name.classList.add('name');
+//     name.textContent = {objt};
+//     cardInfo.appendChild(name);
+//
+//     // Login name - p
+//     const userName = document.createElement('p');
+//     userName.classList.add('username');
+//     userName.textContent = {objt};
+//     cardInfo.appendChild(userName);
+//
+//     // Location - p
+//     const location = document.createElement('p');
+//     location.textContent = `Location: ${objt}`;
+//     cardInfo.appendChild(location);
+//
+//     // Profile - p
+//     const profile = document.createElement('p');
+//     profile.textContent = `Profile:`;
+//     cardInfo.appendChild(profile);
+//
+//     // Href anchor - a
+//     const anchor = document.createElement('a');
+//     anchor.href = {objt};
+//     profile.appendChild(anchor);
+//
+//     // Followers - p
+//     const followers = document.createElement('p');
+//     followers.textContent = `Followers: ${objt}`;
+//     cardInfo.appendChild(followers);
+//
+//     // Following - p
+//     const following = document.createElement('p');
+//     following.textContent = `Following: ${objt}`;
+//     cardInfo.appendChild(following);
+//
+//     // Bio - p
+//     const bio = document.createElement('p');
+//     bio.textContent = `Bio: ${objt}`;
+//     cardInfo.appendChild(bio);
+//
+//     // Return card
+//     return card;
+// }
